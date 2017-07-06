@@ -49,6 +49,9 @@ The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
 
+## Design and Wireframe
+![Design and Wireframe](https://github.com/RubyGroup3/BookSharing/blob/master/wireframe/mockup.png)
+
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
