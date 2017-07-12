@@ -49,7 +49,7 @@ The following **additional** features are implemented:
 - [ ] List anything else that you can get done to improve the app functionality!
 
 ## Design and Wireframe
-![Design and Wireframe](https://app.moqups.com/phuonghoang713@gmail.com/Its0KiCmFe/view/page/aa9df7b72)
+[Design and Wireframe](https://app.moqups.com/phuonghoang713@gmail.com/Its0KiCmFe/view/page/aa9df7b72)
 
 ## Video Wireframe Walkthrough 
 
