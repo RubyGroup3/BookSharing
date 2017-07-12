@@ -5,9 +5,9 @@
 > - remove the `README.rdoc` file that Rails generates. 
 > - remove all the HINT blocks in this file.
 
-**Name of your app** is a Ruby on Rails blog application.
+**Book Sharing** is a Ruby on Rails blog application.
 
-Submitted by: **Your Name Here**
+Submitted by: **Group 3**
 
 Time spent: **X** hours spent in total
 
@@ -19,31 +19,30 @@ The following is a list of **required** features of the application you'll build
 
 > HINT: Mark the items you completed with [x] as you go
 
-* [ ] Users can create, edit, and delete Articles from the database using their Rails application.
-* [ ] User can create a new Article, formatted using the Markdown language.
-* [ ] User can see how long ago the Article was created.
-* [ ] There is one Article that introduces the App Creator with name & picture.
-* [ ] User see a search form on the Articles page.
-* [ ] When the User attempts to delete an Article there is an alert modal which asks the User to confirm deletion of that specific Article.
-* [ ] User can submit a search term to find Articles with titles or body containing search terms.
-* [ ] User can create, edit, and delete comments on an Article.
-* [ ] User can navigate the application with a responsive navbar.
-      http://v4-alpha.getbootstrap.com/examples/navbar/.
-* [ ] User can Sign Up, Log In, & Sign Out of our application using the Devise gem.      
+* [ ] Users can create, edit, and delete Book from the database using their Rails application.
+* [ ] User can set Book type is rent or need to rent
+* [ ] User can Search a Book, filter or sort by Author, Publisher, Section or Book status(avalable, unavailable),...
+* [ ] User can see how long the Book can be will rent or exchange.
+* [ ] There are six colums that listed the Book with name, picture, sort description and status(rent, exchange, sell).
+* [ ] User can manage(publish, unpublish) their book from manage page.
+* [ ] When the User attempts to publish or an publish a Book there is an alert modal which asks the User to confirm action of that specific Book.
+* [ ] User can submit a search term to find Books with titles or description containing search terms.
+* [ ] User can create, edit, and delete comments on an Book.
+* [ ] User can Sign Up, Log In, & Sign Out of application.      
 * [ ] The navbar will be responsive as well as **smart**, showing the user logical options related to authentication.
-* [ ] Only users that are logged in can create Articles.
-* [ ] Users can only edit & delete their own Articles.
+* [ ] Only users that are logged in can create Book.
+* [ ] Users can only edit & delete their own Book.
 * [ ] User can only edit & delete their own comments.
-
-
-The following **optional** features are implemented:
-
-* [x] User can see who created the Article.
-* [ ] User can see how many views an Article has.
+* [ ] User can see who created the Book.
+* [ ] User can see how many views an Book has.
 * [ ] User can see who created the Comment.
-* [ ] User can add "tags" to a Article, and filter Articles by tag.
+* [ ] User can add "tags" to a Book, and filter Book by tag.
 
 > HINT: if you are unsure how to implement the Search feature, you can Google how to implement a simple search form. For example, one of the sites you will find is [this](http://www.jorgecoca.com/buils-search-form-ruby-rails/)
+
+### Optional:
+* [ ] Listed hot book by view, rent or exchange in week, month, quarter
+* [ ] Listed related book by tag, user, author, publisher, section,...
 
 The following **additional** features are implemented:
 
