@@ -51,7 +51,7 @@ The following **additional** features are implemented:
 ## Design and Wireframe
 ![Design and Wireframe](https://github.com/RubyGroup3/BookSharing/blob/master/wireframe/mockup.png)
 
-## Video Walkthrough 
+## Video Wireframe Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
