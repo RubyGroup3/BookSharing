@@ -1,3 +1,60 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	background: image-url("bg.gif") 0 0 repeat #f4f4f4;
+}
+.navbar {
+	background-color: #fff;
+	.container {
+		padding-left: 7px !important;
+	}
+}
+
+.nav-link {
+	
+	&:hover, &.active{
+		color: #f36c4f !important;
+		text-decoration: none;
+	}
+}
+
+.active > a{
+	color: #f36c4f !important;
+}
+
+#banner {
+	background-color: #fff;
+	margin-top: 1px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+	img {
+		padding-bottom: 5px;
+		padding-right: 5px;
+		}
+
+	.left-side {
+		float: left;
+		font-size: 2em;
+	}
+
+	.right-side {
+		float: right;
+		padding-top: 5px;
+
+		.btn-outline-warning {
+			
+		}
+	}
+}
+
+.category-list {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.box-featured {
+	.box-header {
+		padding-bottom: 15px;
+		border-bottom: 1px solid #d7d7d7;
+	}
+}

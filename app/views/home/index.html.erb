@@ -1,5 +1,24 @@
-<%= render 'navbar' %>
-<div class="container">
-	<h1>Welcome to Book Sharing</h1>
-	<p>Book sharing help user exchange their books</p>
+<div class="category-list">
+	<button class="btn btn btn-secondary">History</button>
+	<button class="btn btn btn-secondary">Fiction</button>
+
+	<button class="btn btn btn-secondary">Mystery</button>
+
+	<button class="btn btn btn-secondary">Comic</button>
+
+	<button class="btn btn btn-secondary active">All</button>
+</div>
+
+<div class="box-featured">
+	<div class="box-header">
+		Books
+	</div>
+
+	<div class="box-content">
+		<% (1..20).each do %>
+			<div class="col-sm-2">
+				
+			</div>
+		<% end %>
+	</div>
 </div>
