@@ -1,0 +1,82 @@
+<%= form_with(model: book_deal, local: true) do |form| %>
+  <% if book_deal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book_deal.errors.count, "error") %> prohibited this book_deal from being saved:</h2>
+
+      <ul>
+      <% book_deal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :book_id %>
+    <%= form.text_field :book_id, id: :book_deal_book_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :book_deal_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :condition %>
+    <%= form.number_field :condition, id: :book_deal_condition %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status, id: :book_deal_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :publish_at %>
+    <%= form.datetime_select :publish_at, id: :book_deal_publish_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :edition %>
+    <%= form.text_field :edition, id: :book_deal_edition %>
+  </div>
+
+  <div class="field">
+    <%= form.label :release_date %>
+    <%= form.datetime_select :release_date, id: :book_deal_release_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :book_deal_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :book_deal_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :return_date %>
+    <%= form.datetime_select :return_date, id: :book_deal_return_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deal_id %>
+    <%= form.text_field :deal_id, id: :book_deal_deal_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deal_type %>
+    <%= form.number_field :deal_type, id: :book_deal_deal_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deal_date %>
+    <%= form.datetime_select :deal_date, id: :book_deal_deal_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

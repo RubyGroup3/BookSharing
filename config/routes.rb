@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :ratings
+  resources :comments
+  resources :book_deals
   devise_for :users
   resources :books
   resources :publishers
