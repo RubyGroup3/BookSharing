@@ -34,7 +34,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Devise
 gem 'devise'
-
+# Open Library REST API and Books API.
+gem 'openlibrary'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
