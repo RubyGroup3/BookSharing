@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <nav class="navbar navbar-toggleable-md navbar-light">
     <div class="container">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -7,7 +7,7 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item <% if current_page?(root_path) %>active <% end %>">
             <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
@@ -22,6 +22,18 @@
           <li class="nav-item">
             <a class="nav-link" href="<%= new_publisher_path %>">Create a publisher</a>
           </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= destroy_user_session_path%>" data-method="delete">Sign out</a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= new_user_session_path %>">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= new_user_registration_path %>">Create an account</a>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
