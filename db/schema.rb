@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170723055855) do
     t.index ["book_id"], name: "index_book_deals_on_book_id"
     t.index ["user_id"], name: "index_book_deals_on_user_id"
   end
-  
+
   create_table "books", force: :cascade do |t|
     t.string "name"
     t.string "image"
@@ -108,6 +108,4 @@ ActiveRecord::Schema.define(version: 20170723055855) do
   add_foreign_key "comments", "users"
   add_foreign_key "ratings", "book_deals"
   add_foreign_key "ratings", "users"
-  add_foreign_key "books", "categories"
-  add_foreign_key "books", "publishers"
 end
