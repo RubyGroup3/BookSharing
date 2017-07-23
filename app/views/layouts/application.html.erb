@@ -9,9 +9,14 @@
   </head>
 
   <body>
-  	<%= render 'home/navbar' %>
-  	<div class="container main">
+  	<header>
+  		<%= render 'home/navbar' %>
+  	</header>
+  	<section class="container main">
     	<%= yield %>
-    </div>
+    </section>
+    <footer>
+    	<%= render 'home/footer' %>
+    </footer>   
   </body>
 </html>
