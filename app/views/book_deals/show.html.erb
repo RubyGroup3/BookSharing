@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @book_deal.book %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @book_deal.user %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @book_deal.condition %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @book_deal.status %>
+</p>
+
+<p>
+  <strong>Publish at:</strong>
+  <%= @book_deal.publish_at %>
+</p>
+
+<p>
+  <strong>Edition:</strong>
+  <%= @book_deal.edition %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @book_deal.release_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @book_deal.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @book_deal.price %>
+</p>
+
+<p>
+  <strong>Return date:</strong>
+  <%= @book_deal.return_date %>
+</p>
+
+<p>
+  <strong>Deal:</strong>
+  <%= @book_deal.deal_id %>
+</p>
+
+<p>
+  <strong>Deal type:</strong>
+  <%= @book_deal.deal_type %>
+</p>
+
+<p>
+  <strong>Deal date:</strong>
+  <%= @book_deal.deal_date %>
+</p>
+
+<%= link_to 'Edit', edit_book_deal_path(@book_deal) %> |
+<%= link_to 'Back', book_deals_path %>

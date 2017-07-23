@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Book Deals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Book</th>
+      <th>User</th>
+      <th>Condition</th>
+      <th>Status</th>
+      <th>Publish at</th>
+      <th>Edition</th>
+      <th>Release date</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Return date</th>
+      <th>Deal</th>
+      <th>Deal type</th>
+      <th>Deal date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @book_deals.each do |book_deal| %>
+      <tr>
+        <td><%= book_deal.book %></td>
+        <td><%= book_deal.user %></td>
+        <td><%= book_deal.condition %></td>
+        <td><%= book_deal.status %></td>
+        <td><%= book_deal.publish_at %></td>
+        <td><%= book_deal.edition %></td>
+        <td><%= book_deal.release_date %></td>
+        <td><%= book_deal.description %></td>
+        <td><%= book_deal.price %></td>
+        <td><%= book_deal.return_date %></td>
+        <td><%= book_deal.deal_id %></td>
+        <td><%= book_deal.deal_type %></td>
+        <td><%= book_deal.deal_date %></td>
+        <td><%= link_to 'Show', book_deal %></td>
+        <td><%= link_to 'Edit', edit_book_deal_path(book_deal) %></td>
+        <td><%= link_to 'Destroy', book_deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book Deal', new_book_deal_path %>
