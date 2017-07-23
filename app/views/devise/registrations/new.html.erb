@@ -1,29 +1,66 @@
-<h2>Sign up</h2>
+<%= render 'shared/error', object: resource %>
+<h5 class="title">Register Account</h5>
+<p style="color: rgb(155, 155, 155);">If you already have an account with us, please login at the <a href="<%= new_user_registration_path %>">login page</a>.</p>
+
+<h5>Your Personal Details</h5>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="form-group row">
+    <lable class="col-sm-4 lable-control"><span class="require">*</span> Email:</lable>
+    <div class="col-sm-5">
+      <%= f.email_field :email, class: "form-control", autofocus: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="form-group row">
+    <lable class="col-sm-4 lable-control"><span class="require">*</span> Username:</lable>
+    <div class="col-sm-5">
+      <%= f.text_field :username, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <div class="form-group row">
+    <lable class="col-sm-4 lable-control"><span class="require">*</span> Fullname:</lable>
+    <div class="col-sm-5">
+      <%= f.text_field :fullname, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="form-group row">
+    <lable class="col-sm-4 lable-control">Address:</lable>
+    <div class="col-sm-5">
+      <%= f.text_area :address, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <lable class="col-sm-4 lable-control">Phone:</lable>
+    <div class="col-sm-5">
+      <%= f.text_field :phone, class: "form-control"%>
+    </div>
+  </div>
+
+
+<h5>Your Password</h5>
+
+  <div class="form-group row">
+    <lable class="col-sm-4 lable-control"><span class="require">*</span> Password:</lable>
+    <div class="col-sm-5">
+      <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <lable class="col-sm-4 lable-control"><span class="require">*</span> Password confirmation:</lable>
+    <div class="col-sm-5">
+      <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="actions col-sm-2 offset-sm-7">
+      <%= f.submit "Sign up", class:"btn btn-primary btn-block" %>
+    </div>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
