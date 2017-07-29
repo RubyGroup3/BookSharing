@@ -10,6 +10,7 @@
 
   <body>
   	<div class="page">
+  		<%= render 'shared/flash_messages' if !flash.empty? %>
 	  	<header>
 	  		<%= render 'home/navbar' %>
 	  	</header>
@@ -24,3 +25,4 @@
     </div>   
   </body>
 </html>
+
