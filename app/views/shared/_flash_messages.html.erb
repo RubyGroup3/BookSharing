@@ -1,0 +1,9 @@
+<div id="flash">
+  <% flash.each do |key, value| %>
+  	<i class="fa fa-bullhorn"></i><%= value %>
+  <% end %>
+</div>
+
+<script>
+    setTimeout("$('#flash').fadeOut('slow')", 2000)
+ </script>
