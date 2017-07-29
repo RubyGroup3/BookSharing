@@ -15,11 +15,11 @@
 					  <img class="box-item-img" src="<%= item.book.image %>" alt="Card image cap">
 
 					  <div class="box-item-title">
-					  	<%= link_to item.book.name, item %>
+					  	<%= link_to truncate(item.book.name, length: 20), item %>
 					  </div>
 
 					  <div class="box-item-description">
-					  	<%= item.description %>
+					  	<%= truncate(item.description, length: 50) %>
 					  </div>
 
 					  <div class="box-item-button">
