@@ -22,12 +22,11 @@
               <a class="nav-link" href="<%= new_user_registration_path %>">Create an account</a>
             </li>
           <% end %>
-          <li class="nav-item">
-            <a class="nav-link" href="<%= new_category_path %>">Create a category</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<%= new_publisher_path %>">Create a publisher</a>
-          </li>
+          <% if current_user.admin %>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= admin_path %>">Admin</a>
+            </li>
+          <% end %>
           
         </ul>
       </div>
