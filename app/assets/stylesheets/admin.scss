@@ -1,0 +1,23 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.table-bordered{
+	border: 1px solid red;
+	background-color: #e5e5e5;
+
+	thead {
+		background-color: #fff ;
+	}
+
+	tbody {
+		background-color: #e5e5e5;
+	}
+
+	tr {
+		border-bottom-width: 1px;
+	}
+	
+	tfoot {
+		
+	}
+}
