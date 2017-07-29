@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   resources :book_deals
   devise_for :users
   resources :books
-  get '/categories/new', to: 'categories#new'
-  get '/publishers/new', to: 'publishers#new'
+  resources :users, only: [:show]
   get '/admin', to: 'admin#index'
   scope '/admin' do
     resources :publishers

@@ -1,0 +1,35 @@
+<h5 class="title"><%= @user.username || @user.fullname %>'s Book</h5>
+
+<div class="box-featured">
+	<div class="box-header">
+		Avaiable
+	</div>
+
+	<div class="box-content">
+		<div class="row">
+			<% @user.book_deals.each do |item| %>
+
+				<div class="col-sm-3">
+					<div class="box-item">
+
+					  <img class="box-item-img" src="<%= item.book.image %>" alt="Card image cap">
+
+					  <div class="box-item-title">
+					  	<%= link_to item.book.name, item %>
+					  </div>
+
+					  <div class="box-item-description">
+					  	<%= item.description %>
+					  </div>
+
+					  <div class="box-item-button">
+					  	<button class="btn btn-primary btn-block">Exchange</button>
+					  </div>
+					</div>
+
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
