@@ -16,6 +16,7 @@
 
 	<div class="box-content">
 		<div class="row">
+			<!--
 			<% (1..8).each do %>
 
 				<div class="col-sm-3">
@@ -37,6 +38,25 @@
 
 				</div>
 			<% end %>
+			-->
+			<div class="col-sm-3">
+				<% @books.each do |book| %>
+					<div class="box-item">
+					  <img class="box-item-img" src="<%= book.image %>" alt="Card image cap">
+
+					  <div class="box-item-title">
+					  	<a href="#"><%= book.name %></a>
+					  </div>
+
+					  <div class="box-item-description">
+					  	Some random, abc xyz bla bla bla bla bla bla
+					  </div>
+
+					  <div class="box-item-button">
+					  	<button class="btn btn-primary btn-block">Exchange</button>
+					  </div>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>

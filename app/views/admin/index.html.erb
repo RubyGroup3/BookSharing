@@ -16,7 +16,7 @@
 				<td><%= c.name %></td>
 				<td><%= c.books.count %></td>
 				<td>
-					<%= button_to c, method: "get", class: "btn btn-secondary" do %>
+					<%= button_to [:edit, c], method: "get", class: "btn btn-secondary" do %>
 						Manage
 					<% end %>
 				</td>
@@ -30,7 +30,7 @@
 	</tbody>
 	<tfoot>
 		<tr>
-			
+				<!--
 				<%= form_for Category.new, html: {class: ""} do |f| %>
 
 					<td colspan="2">
@@ -40,7 +40,8 @@
 					<%= f.submit class: "btn btn-primary" %>
 					</td>
 				<% end %>
-			</td>
+				-->
+				<%= render 'categories/form', category: Category.new %>
 		</tr>
 	</tfoot>	
 </table>
@@ -64,7 +65,7 @@
 				<td><%= c.name %></td>
 				<td><%= c.books.count %></td>
 				<td>
-					<%= button_to c, method: "get", class: "btn btn-secondary" do %>
+					<%= button_to [:edit, c], method: "get", class: "btn btn-secondary" do %>
 						Manage
 					<% end %>
 				</td>
@@ -78,17 +79,18 @@
 	</tbody>
 	<tfoot>
 		<tr>
-			
-				<%= form_for Publisher.new, html: {class: ""} do |f| %>
+			<!--
+			<%= form_for Publisher.new, html: {class: ""} do |f| %>
 
-					<td colspan="2">
-					<%= f.text_field :name, class: "form-control" %>
-					</td>
-					<td colspam="2">
-					<%= f.submit class: "btn btn-primary" %>
-					</td>
-				<% end %>
-			</td>
+				<td colspan="2">
+				<%= f.text_field :name, class: "form-control" %>
+				</td>
+				<td colspam="2">
+				<%= f.submit class: "btn btn-primary" %>
+				</td>
+			<% end %>
+			-->
+			<%= render 'publishers/form', publisher: Publisher.new %>
 		</tr>
 	</tfoot>
 </table>

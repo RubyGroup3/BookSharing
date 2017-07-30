@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <!--
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :publisher_name %>
@@ -19,4 +19,11 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+  -->
+  <td colspan="2">
+    <%= form.text_field :name, class: "form-control" %>
+  </td>
+  <td colspam="2">
+    <%= form.submit class: "btn btn-primary" %>
+  </td>
 <% end %>
