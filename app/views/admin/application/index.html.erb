@@ -1,0 +1,92 @@
+<%#
+# Index
+
+This view is the template for the index page.
+It is responsible for rendering the search bar, header and pagination.
+It renders the `_table` partial to display details about the resources.
+
+## Local variables:
+
+- `page`:
+  An instance of [Administrate::Page::Collection][1].
+  Contains helper methods to help display a table,
+  and knows which attributes should be displayed in the resource's table.
+- `resources`:
+  An instance of `ActiveRecord::Relation` containing the resources
+  that match the user's search criteria.
+  By default, these resources are passed to the table partial to be displayed.
+- `search_term`:
+  A string containing the term the user has searched for, if any.
+- `show_search_bar`:
+  A boolean that determines if the search bar should be shown.
+
+[1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Collection
+%>
+
+<% content_for(:title) do %>
+  <%= display_resource_name(page.resource_name) %>
+<% end %>
+
+<header>
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">
+        <%= content_for(:title) %>
+      </h1>
+    </div>
+  </div>
+</header>
+
+<section class="main-content__body main-content__body--flush">
+  
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            DataTables Advanced Tables
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+          <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+
+            <div class="row">
+              <div class="col-sm-6">
+                <%= link_to(
+                              "#{t("administrate.actions.new")} #{page.resource_name.titleize.downcase}",
+                              [:new, namespace, page.resource_path],
+                              class: "btn btn-primary btn-sm",
+                            ) if valid_action? :new %>
+              </div>
+              <% if show_search_bar %>
+                <div class="col-sm-6">
+                  <div id="dataTables-example_filter" class="dataTables_filter">
+                    <%= render "search", search_term: search_term, resource_name: resource_name %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                <%= render(
+                    "collection",
+                    collection_presenter: page,
+                    resources: resources,
+                    table_title: "page-title"
+                  ) %>
+              </div>
+            </div>
+
+            <div class="row">
+              <%= paginate resources %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+</section>
