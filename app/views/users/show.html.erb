@@ -1,4 +1,4 @@
-<h5 class="title"><%= @user.username || @user.fullname %>'s Book</h5>
+<h5 class="title"><%= @user.username%>'s books</h5>
 
 <div class="box-featured">
 	<div class="box-header">
@@ -23,7 +23,12 @@
 					  </div>
 
 					  <div class="box-item-button">
-					  	<button class="btn btn-primary btn-block">Exchange</button>
+					  	<% if current_user == @user %>
+					  	
+					  		<button class="btn btn-primary btn-block">Edit</button>
+					  	<% else %>
+					  		<button class="btn btn-primary btn-block">Exchange</button>
+					  	<% end %>
 					  </div>
 					</div>
 
