@@ -24,7 +24,11 @@
     <!--
     <%= form.text_field :user_id, id: :book_deal_user_id %>
     -->
-    <%= form.text_field :user_id, value:current_user.username, id: :book_deal_user_id %>
+    <% if @book_deal.user %>
+      <%= @book_deal.user.username %>
+    <% else %>
+      <%= current_user.username %>
+    <% end %>
   </div>
 
   <div class="field">

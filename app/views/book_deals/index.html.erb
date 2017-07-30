@@ -39,8 +39,10 @@
         <td><%= book_deal.deal_type %></td>
         <td><%= book_deal.deal_date %></td>
         <td><%= link_to 'Show', book_deal %></td>
-        <td><%= link_to 'Edit', edit_book_deal_path(book_deal) %></td>
-        <td><%= link_to 'Destroy', book_deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if book_deal.user == current_user %>
+          <td><%= link_to 'Edit', edit_book_deal_path(book_deal) %></td>
+          <td><%= link_to 'Destroy', book_deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
