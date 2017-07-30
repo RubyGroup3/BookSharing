@@ -1,6 +1,6 @@
 class BookDealsController < ApplicationController
   before_action :set_book_deal, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /book_deals
   # GET /book_deals.json
   def index

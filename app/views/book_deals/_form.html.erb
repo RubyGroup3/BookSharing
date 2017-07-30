@@ -29,12 +29,18 @@
 
   <div class="field">
     <%= form.label :condition %>
+    <!--
     <%= form.number_field :condition, id: :book_deal_condition %>
+    -->
+    <%= form.select :condition, BookDeal.conditions.keys %>
   </div>
 
   <div class="field">
     <%= form.label :status %>
+    <!--
     <%= form.number_field :status, id: :book_deal_status %>
+    -->
+    <%= form.select :status, BookDeal.statuses.keys %>
   </div>
 
   <div class="field">
@@ -74,7 +80,10 @@
 
   <div class="field">
     <%= form.label :deal_type %>
+    <!--
     <%= form.number_field :deal_type, id: :book_deal_deal_type %>
+    -->
+    <%= form.select :deal_type, BookDeal.deal_types.keys %>
   </div>
 
   <div class="field">
