@@ -16,31 +16,8 @@
 
 	<div class="box-content">
 		<div class="row">
-			<!--
-			<% (1..8).each do %>
-
+			<% @deals.each do |deal| %>
 				<div class="col-sm-3">
-					<div class="box-item">
-					  <img class="box-item-img" src="https://images-na.ssl-images-amazon.com/images/I/51KRuC%2BmItL._SY346_.jpg" alt="Card image cap">
-
-					  <div class="box-item-title">
-					  	<a href="#">Book Title</a>
-					  </div>
-
-					  <div class="box-item-description">
-					  	Some random, abc xyz bla bla bla bla bla bla
-					  </div>
-
-					  <div class="box-item-button">
-					  	<button class="btn btn-primary btn-block">Exchange</button>
-					  </div>
-					</div>
-
-				</div>
-			<% end %>
-			-->
-			<div class="col-sm-3">
-				<% @deals.each do |deal| %>
 					<div class="box-item">
 					  <img class="box-item-img" src="<%= deal.book.image %>" alt="Card image cap">
 
@@ -55,8 +32,9 @@
 					  <div class="box-item-button">
 					  	<button class="btn btn-primary btn-block"><%= deal.deal_type %></button>
 					  </div>
-				<% end %>
-			</div>
+					</div>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </div>
