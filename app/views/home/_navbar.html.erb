@@ -14,11 +14,12 @@
 
             <% if current_user.admin %>
               <li class="nav-item">
-                <a class="nav-link" href="<%= admin_path %>">Admin</a>
+                <a class="nav-link" href="<%= admin_root_path %>">Admin</a>
               </li>
             <% end %>
             <li class="nav-item">
-              <a class="nav-link" href="<%= user_path(current_user)%>">Profile</a>
+              <a class="nav-link" href="<%= user_path(current_user)%>"
+              >My books</a>
             </li>
 
             <li class="nav-item">
