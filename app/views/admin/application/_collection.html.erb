@@ -18,9 +18,9 @@ to display a collection of resources in an HTML table.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Collection
 %>
 
-<table aria-labelledby="<%= table_title %>">
+<table width="100%" class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline">
   <thead>
-    <tr>
+    <tr role="row">
       <% collection_presenter.attribute_types.each do |attr_name, attr_type| %>
         <th class="cell-label
         cell-label--<%= attr_type.html_class %>

@@ -25,16 +25,15 @@ By default, it renders:
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render "icons" %>
+      <%= render "navigation" -%>
+      <div id="page-wrapper">
+        <%= render "flashes" -%>
+        <%= yield %>
+      </div>
+  
 
-  <div class="app-container">
-    <%= render "navigation" -%>
-
-    <main class="main-content" role="main">
-      <%= render "flashes" -%>
-      <%= yield %>
-    </main>
-  </div>
+    
+  
 
   <%= render "javascript" %>
 </body>

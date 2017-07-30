@@ -7,12 +7,34 @@ for all resources in the admin dashboard,
 as defined by the routes in the `admin/` namespace
 %>
 
-<nav class="navigation" role="navigation">
-  <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
-    <%= link_to(
-      display_resource_name(resource),
-      [namespace, resource.path],
-      class: "navigation__link navigation__link--#{nav_link_state(resource)}"
-    ) %>
-  <% end %>
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+	<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="<%= admin_root_path %>">Admin panel</a>
+	</div>
+
+
+<div class="navbar-default sidebar" role="navigation">
+  <div class="sidebar-nav navbar-collapse">
+    <ul class="nav" id="side-menu">
+
+   
+
+		  <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
+		  	<li>
+		  	
+		    <%= link_to [namespace, resource.path] do %>
+		    	<i class="fa fa-edit fa-fw"></i>
+		    	<%= display_resource_name(resource) %>
+		    <% end %>
+		    </li>
+		  <% end %>
+		</ul>
+	</div>
+</div>
 </nav>

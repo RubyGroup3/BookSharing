@@ -7,6 +7,7 @@ end
 
 gem 'faker'
 gem 'administrate'
+gem 'bootstrap_sb_admin_base_v2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'

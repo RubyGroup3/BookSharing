@@ -60,6 +60,9 @@ GEM
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
+    bootstrap_sb_admin_base_v2 (0.3.6)
+      font-awesome-rails
+      jquery-rails
     builder (3.2.3)
     byebug (9.0.6)
     capybara (2.14.4)
@@ -264,6 +267,7 @@ DEPENDENCIES
   administrate
   bcrypt (~> 3.1.11)
   bootstrap (~> 4.0.0.alpha6)
+  bootstrap_sb_admin_base_v2
   byebug
   capybara
   coffee-rails (~> 4.2)
