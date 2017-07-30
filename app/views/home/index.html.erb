@@ -14,8 +14,8 @@
 	<div class="box-content">
 	<%= will_paginate @deals %>
 		<div class="row">
-			
-				<% @deals.each do |deal| %>
+
+			<% @deals.each do |deal| %>
 				<div class="col-sm-3">
 					<div class="box-item">
 					  <img class="box-item-img" src="<%= deal.book.image %>" alt="Card image cap">
@@ -31,8 +31,10 @@
 					  <div class="box-item-button">
 					  	<button class="btn btn-primary btn-block"><%= deal.deal_type %></button>
 					  </div>
-				
-			</div>
+
+					</div>
+				</div>
+			<% end %>
 		</div>
 		<% end %>
 	</div>
