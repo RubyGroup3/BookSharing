@@ -1,11 +1,7 @@
 <div class="category-list">
-	<button class="btn btn btn-secondary">History</button>
-	<button class="btn btn btn-secondary">Fiction</button>
-
-	<button class="btn btn btn-secondary">Mystery</button>
-
-	<button class="btn btn btn-secondary">Comic</button>
-
+	<% Category.all.each do |category| %>
+		<button class="btn btn btn-secondary"><%= category.name %></button>
+	<% end %>
 	<button class="btn btn btn-secondary active">All</button>
 </div>
 
@@ -14,7 +10,9 @@
 		Exchange
 	</div>
 
+
 	<div class="box-content">
+	<%= will_paginate @deals %>
 		<div class="row">
 			
 				<% @deals.each do |deal| %>
@@ -39,3 +37,5 @@
 		<% end %>
 	</div>
 </div>
+
+<%= will_paginate @deals %>
