@@ -13,12 +13,18 @@
 
   <div class="field">
     <%= form.label :book_id %>
+    <!--
     <%= form.text_field :book_id, id: :book_deal_book_id %>
+    -->
+    <%= form.select :book_id, Book.all.map{ |book| [book.name, book.id]}, id: :book_id %>
   </div>
 
   <div class="field">
     <%= form.label :user_id %>
+    <!--
     <%= form.text_field :user_id, id: :book_deal_user_id %>
+    -->
+    <%= form.text_field :user_id, value:current_user.username, id: :book_deal_user_id %>
   </div>
 
   <div class="field">

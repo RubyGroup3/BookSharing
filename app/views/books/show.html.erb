@@ -7,7 +7,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @book.image %>
+  <image src="<%= @book.image %>" height="300px" />
 </p>
 
 <p>
@@ -17,12 +17,12 @@
 
 <p>
   <strong>Publisher:</strong>
-  <%= @book.publisher %>
+  <%= @book.publisher.name %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @book.category %>
+  <%= @book.category.name %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |

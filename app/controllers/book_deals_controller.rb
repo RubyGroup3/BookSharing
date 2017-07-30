@@ -25,7 +25,7 @@ class BookDealsController < ApplicationController
   # POST /book_deals.json
   def create
     @book_deal = BookDeal.new(book_deal_params)
-
+    @book_deal.user_id = current_user.id if current_user
     respond_to do |format|
       if @book_deal.save
         format.html { redirect_to @book_deal, notice: 'Book deal was successfully created.' }
