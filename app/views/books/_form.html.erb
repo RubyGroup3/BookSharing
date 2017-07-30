@@ -28,12 +28,18 @@
 
   <div class="field">
     <%= form.label :publisher_id %>
+    <!--
     <%= form.text_field :publisher_id, id: :book_publisher_id %>
+    -->
+    <%= form.select :publisher_id, Publisher.all.map{ |publisher| [publisher.name, publisher.id]}, id: :book_publisher_id %>
   </div>
 
   <div class="field">
     <%= form.label :category_id %>
+    <!--
     <%= form.text_field :category_id, id: :book_category_id %>
+    -->
+    <%= form.select :category_id, Category.all.map{ |category| [category.name, category.id]}, id: :book_category_id %>
   </div>
 
   <div class="actions">

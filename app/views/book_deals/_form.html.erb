@@ -13,22 +13,38 @@
 
   <div class="field">
     <%= form.label :book_id %>
+    <!--
     <%= form.text_field :book_id, id: :book_deal_book_id %>
+    -->
+    <%= form.select :book_id, Book.all.map{ |book| [book.name, book.id]}, id: :book_id %>
   </div>
 
   <div class="field">
     <%= form.label :user_id %>
+    <!--
     <%= form.text_field :user_id, id: :book_deal_user_id %>
+    -->
+    <% if @book_deal.user %>
+      <%= @book_deal.user.username %>
+    <% else %>
+      <%= current_user.username %>
+    <% end %>
   </div>
 
   <div class="field">
     <%= form.label :condition %>
+    <!--
     <%= form.number_field :condition, id: :book_deal_condition %>
+    -->
+    <%= form.select :condition, BookDeal.conditions.keys %>
   </div>
 
   <div class="field">
     <%= form.label :status %>
+    <!--
     <%= form.number_field :status, id: :book_deal_status %>
+    -->
+    <%= form.select :status, BookDeal.statuses.keys %>
   </div>
 
   <div class="field">
@@ -68,7 +84,10 @@
 
   <div class="field">
     <%= form.label :deal_type %>
+    <!--
     <%= form.number_field :deal_type, id: :book_deal_deal_type %>
+    -->
+    <%= form.select :deal_type, BookDeal.deal_types.keys %>
   </div>
 
   <div class="field">

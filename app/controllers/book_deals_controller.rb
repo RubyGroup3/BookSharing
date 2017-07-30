@@ -1,6 +1,8 @@
 class BookDealsController < ApplicationController
   before_action :set_book_deal, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
+  
   # GET /book_deals
   # GET /book_deals.json
   def index
@@ -25,7 +27,7 @@ class BookDealsController < ApplicationController
   # POST /book_deals.json
   def create
     @book_deal = BookDeal.new(book_deal_params)
-
+    @book_deal.user_id = current_user.id if current_user
     respond_to do |format|
       if @book_deal.save
         format.html { redirect_to @book_deal, notice: 'Book deal was successfully created.' }
@@ -62,6 +64,11 @@ class BookDealsController < ApplicationController
   end
 
   private
+    def check_user
+      if @book_deal.user != current_user
+        redirect_to book_deals_path
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_book_deal
       @book_deal = BookDeal.find(params[:id])

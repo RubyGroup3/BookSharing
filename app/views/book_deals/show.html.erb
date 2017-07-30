@@ -2,12 +2,12 @@
 
 <p>
   <strong>Book:</strong>
-  <%= @book_deal.book %>
+  <%= @book_deal.book.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @book_deal.user %>
+  <%= @book_deal.user.username %>
 </p>
 
 <p>
@@ -64,6 +64,7 @@
   <strong>Deal date:</strong>
   <%= @book_deal.deal_date %>
 </p>
-
-<%= link_to 'Edit', edit_book_deal_path(@book_deal) %> |
+<% if @book_deal.user == current_user %>
+  <%= link_to 'Edit', edit_book_deal_path(@book_deal) %> |
+<% end %>
 <%= link_to 'Back', book_deals_path %>

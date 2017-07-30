@@ -25,8 +25,8 @@
   <tbody>
     <% @book_deals.each do |book_deal| %>
       <tr>
-        <td><%= book_deal.book %></td>
-        <td><%= book_deal.user %></td>
+        <td><%= book_deal.book.name %></td>
+        <td><%= book_deal.user.username %></td>
         <td><%= book_deal.condition %></td>
         <td><%= book_deal.status %></td>
         <td><%= book_deal.publish_at %></td>
@@ -39,8 +39,10 @@
         <td><%= book_deal.deal_type %></td>
         <td><%= book_deal.deal_date %></td>
         <td><%= link_to 'Show', book_deal %></td>
-        <td><%= link_to 'Edit', edit_book_deal_path(book_deal) %></td>
-        <td><%= link_to 'Destroy', book_deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if book_deal.user == current_user %>
+          <td><%= link_to 'Edit', edit_book_deal_path(book_deal) %></td>
+          <td><%= link_to 'Destroy', book_deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
