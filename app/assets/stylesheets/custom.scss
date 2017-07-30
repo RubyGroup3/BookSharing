@@ -131,13 +131,20 @@ a.button-cont-right {
 		}
 }
 
-#flash {
+#flash{
 
-  i {
+  i{
     font-size: 20px;
     margin: 0 9px 2px;
+    color: #f36c4f;
   }
-  color: #f36c4f;
+
+  button {
+    color: #f36c4f;
+    font-size: 20px;
+  }
+
+
   background-color: #fff;
   width: 100%;
   padding-top: 20px;
