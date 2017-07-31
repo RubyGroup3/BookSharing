@@ -27,6 +27,7 @@ class UserDashboard < Administrate::BaseDashboard
     phone: Field::String,
     username: Field::String,
     admin: Field::Boolean,
+    role: EnumField,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -39,6 +40,7 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :email,
     :encrypted_password,
+    :role,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -63,6 +65,7 @@ class UserDashboard < Administrate::BaseDashboard
     :phone,
     :username,
     :admin,
+    :role,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -85,6 +88,7 @@ class UserDashboard < Administrate::BaseDashboard
     :phone,
     :username,
     :admin,
+    :role,
   ].freeze
 
   # Overwrite this method to customize how users are displayed
