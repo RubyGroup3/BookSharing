@@ -2,11 +2,21 @@ class BookDealsController < ApplicationController
   before_action :set_book_deal, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :update, :destroy]
-  
+  after_commit :reindex_book_deals
+
   # GET /book_deals
   # GET /book_deals.json
   def index
-    @book_deals = BookDeal.all
+    #@book_deals = BookDeal.all
+    # @books = Book.all
+    # attributes.merge(
+    #   book_names: @books.map(&:name)
+    # )
+    if params[:query].present?
+      @book_deals = BookDeal.search(params[:query], fields: ["book_id.name", "description"], page: params[:page])
+    else
+      @book_deals = BookDeal.all.page params[:page]
+    end
   end
 
   # GET /book_deals/1
@@ -63,6 +73,12 @@ class BookDealsController < ApplicationController
     end
   end
 
+  # ElasticSearch AutoComplete
+  def autocomplete
+    render json: BookDeal.search(params[:query], autocomplete: true, limit: 12).map do |deal|
+      { name: deal.book_id.name, value: deal.id }
+  end
+
   private
     def check_user
       if @book_deal.user != current_user
@@ -78,4 +94,10 @@ class BookDealsController < ApplicationController
     def book_deal_params
       params.require(:book_deal).permit(:book_id, :user_id, :condition, :status, :publish_at, :edition, :release_date, :description, :price, :return_date, :deal_id, :deal_type, :deal_date)
     end
+    # Reindex after commit
+    def reindex_book_deals
+    @book_deal.each do |deal|
+      deal.reindex
+    end
+  end
 end

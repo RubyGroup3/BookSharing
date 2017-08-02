@@ -13,10 +13,17 @@ Rails.application.routes.draw do
 
   resources :ratings
   resources :comments
-  resources :book_deals
+  #resources :book_deals
   devise_for :users
   resources :books
   resources :users, only: [:show]
+
+  resources :book_deals do
+    collection do
+      #post :import
+      get :autocomplete # <= add this line
+    end
+  end
 
   get 'home/index'
   root :to => "home#index"

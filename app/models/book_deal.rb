@@ -1,9 +1,7 @@
 require 'elasticsearch/model'
 class BookDeal < ApplicationRecord
-	searchkick
-	include Elasticsearch::Model
-  	include Elasticsearch::Model::Callbacks
-
+	searchkick autocomplete: ['book_id.name']
+	#searchkick
 	belongs_to :book
 	belongs_to :user
 	
@@ -12,4 +10,3 @@ class BookDeal < ApplicationRecord
 	enum deal_type: {Rent: 1, Exchange: 2, Sell: 3}
 
 end
-#BookDeal.import # for auto sync model with elastic search

@@ -1,5 +1,5 @@
 <div class="category-list">
-	<% Category.all.each do |category| %>
+	<% @category.each do |category| %>
 		<button class="btn btn btn-secondary"><%= category.name %></button>
 	<% end %>
 	<button class="btn btn btn-secondary active">All</button>
