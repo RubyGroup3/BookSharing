@@ -6,4 +6,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :book_deals
   validates :username, presence: true
+
+  def avaiable_books
+  	book_deals.where(status: 0)
+  end
+
+  
 end

@@ -12,24 +12,23 @@
 
 
 	<div class="box-content">
-	<%= will_paginate @deals %>
 		<div class="row">
 
 			<% @deals.each do |deal| %>
-				<div class="col-sm-3">
+				<div class="col-sm-2">
 					<div class="box-item">
 					  <img class="box-item-img" src="<%= deal.book.image %>" alt="Card image cap">
 
 					  <div class="box-item-title">
-					  	<%= link_to truncate(deal.book.name, length: 20), deal %>
+					  	<%= link_to truncate(deal.book.name, length: 15), deal %>
 					  </div>
 
 					  <div class="box-item-description">
-					  	<%=  truncate(deal.description, length: 50)%>
+					  	<%=  truncate(deal.description, length: 30)%>
 					  </div>
 
 					  <div class="box-item-button">
-					  	<button class="btn btn-primary btn-block"><%= deal.deal_type %></button>
+					  	<%= link_to 'OFFER', offer_path(deal),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#offer-window', class: "btn btn-primary btn-block"}  %>
 					  </div>
 
 					</div>
@@ -40,3 +39,13 @@
 </div>
 
 <%= will_paginate @deals %>
+
+
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="offer-window">
+  <div class="modal-dialog" role="document">
+  </div>
+</div>
+
+

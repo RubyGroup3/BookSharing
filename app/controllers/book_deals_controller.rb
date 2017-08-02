@@ -1,6 +1,6 @@
 class BookDealsController < ApplicationController
   before_action :set_book_deal, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :check_user, only: [:edit, :update, :destroy]
   
   # GET /book_deals
@@ -63,6 +63,28 @@ class BookDealsController < ApplicationController
     end
   end
 
+  def offer
+    @book_deal = BookDeal.find(params[:id])
+    @book_offers = current_user.book_deals
+    respond_to do |format|
+      format.html 
+      format.js
+    end
+  end
+
+  def create_offer
+    @book_deal = BookDeal.find(params[:id])
+    params["offer_ids"].each do |offer|
+      @offer = BookDeal.find(offer)
+      @offer.offer(@book_deal)
+      @offer.save
+    end
+
+    respond_to do |format|
+      format.html {redirect_to root_url, success: "You offer is complete!"}
+    end
+  end
+
   private
     def check_user
       if @book_deal.user != current_user
@@ -78,4 +100,5 @@ class BookDealsController < ApplicationController
     def book_deal_params
       params.require(:book_deal).permit(:book_id, :user_id, :condition, :status, :publish_at, :edition, :release_date, :description, :price, :return_date, :deal_id, :deal_type, :deal_date)
     end
+
 end

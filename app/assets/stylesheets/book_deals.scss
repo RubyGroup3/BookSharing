@@ -1,3 +1,40 @@
 // Place all the styles related to the BookDeals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.book-info {
+	margin-top: 20px;
+	color: #525252;
+	.image {
+		float: left;
+    width: 100%;
+    max-width: 270px;
+    max-height: 424px;
+    height: 100%;
+    margin-bottom: 10px;
+
+    img {
+    	max-width: 100%;
+    	margin-bottom: 20px
+    }
+	}
+
+	h3, .detail {
+  	border-bottom: 1px solid #d7d7d7;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.tab-heading {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	position: relative;
+  color: #333;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 19px;
+  padding: 15px 15px 15px 20px;
+  background: #fff;
+
+
+}

@@ -12,11 +12,14 @@ Rails.application.routes.draw do
   end
 
   resources :ratings
-  resources :comments
-  resources :book_deals
+  resources :book_deals do
+    resources :comments
+  end
   devise_for :users
   resources :books
   resources :users, only: [:show]
+  get "book_deals/offer/:id", to: "book_deals#offer", as: "offer"
+  post "book_deals/offer/:id", to: "book_deals#create_offer", as: "create_offer"
 
   get 'home/index'
   root :to => "home#index"

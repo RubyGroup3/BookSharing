@@ -1,70 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="tab-heading">Book's details</div>
 
-<p>
-  <strong>Book:</strong>
-  <%= @book_deal.book.name %>
-</p>
+<div class="book-info">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="image">
+        <img src="<%= @book_deal.book.image %>"></img>
+      </div>
+    </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @book_deal.user.username %>
-</p>
+    <div class="col-sm-8">
+      <h3><%= @book_deal.book.name %></h3>
+      <div class="detail">
+        Category: <%= @book_deal.book.category.name %><br>
+        Publisher: <%= @book_deal.book.publisher.name %><br>
+        Condition: <%= @book_deal.condition %><br>
+        Edition: <%= @book_deal.edition %><br>
+        Status: Avaiable <br>
+        Owner: <%= link_to @book_deal.user.username, @book_deal.user %>
+      </div>
+      <div class="detail">
+      <p><%= @book_deal.description %></p>
+      </div>
 
-<p>
-  <strong>Condition:</strong>
-  <%= @book_deal.condition %>
-</p>
+      <%= link_to 'OFFER', offer_path(@book_deal),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#offer-window', class: "btn btn-primary btn"}  %>
 
-<p>
-  <strong>Status:</strong>
-  <%= @book_deal.status %>
-</p>
+      <div class="modal fade" tabindex="-1" role="dialog" id="offer-window">
+        <div class="modal-dialog" role="document">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Publish at:</strong>
-  <%= @book_deal.publish_at %>
-</p>
+<div class="tab-heading">Comment</div>
 
-<p>
-  <strong>Edition:</strong>
-  <%= @book_deal.edition %>
-</p>
-
-<p>
-  <strong>Release date:</strong>
-  <%= @book_deal.release_date %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @book_deal.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @book_deal.price %>
-</p>
-
-<p>
-  <strong>Return date:</strong>
-  <%= @book_deal.return_date %>
-</p>
-
-<p>
-  <strong>Deal:</strong>
-  <%= @book_deal.deal_id %>
-</p>
-
-<p>
-  <strong>Deal type:</strong>
-  <%= @book_deal.deal_type %>
-</p>
-
-<p>
-  <strong>Deal date:</strong>
-  <%= @book_deal.deal_date %>
-</p>
-<% if @book_deal.user == current_user %>
-  <%= link_to 'Edit', edit_book_deal_path(@book_deal) %> |
-<% end %>
-<%= link_to 'Back', book_deals_path %>
+<div class="comment">
+<h4>Your comment</h4>
+<%= render 'comments/form', comment: Comment.new %>
+</div>

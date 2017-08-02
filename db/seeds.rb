@@ -24,6 +24,7 @@ Publisher.create(name: "test")
 			book: book,
 			user: @user,
 			deal_type: 1,
+			status: 0,
 			description: Faker::Lorem.paragraph
 		)
 
